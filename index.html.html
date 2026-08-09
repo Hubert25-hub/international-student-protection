@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Demand Stronger Protections for International Students in BC</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0E2238;
+    --ink-soft:#1B3A5C;
+    --paper:#FFFFFF;
+    --fog:#EEF2F6;
+    --signal:#FF5A36;
+    --signal-dark:#DE4423;
+    --gold:#FFC53D;
+    --slate:#54677D;
+    --line: rgba(14,34,56,0.18);
+    --radius: 14px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Inter', sans-serif;
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{
+    font-family:'Space Grotesk', sans-serif;
+    margin:0;
+    letter-spacing:-0.01em;
+  }
+  .eyebrow{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.72rem;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    font-weight:600;
+    color:var(--signal-dark);
+  }
+  a{color:inherit;}
+  img{max-width:100%;display:block;}
+
+  /* ---- dotted sign-line motif ---- */
+  .signline{
+    border:none;
+    border-top:2px dashed var(--line);
+    margin:0;
+  }
+  .signline.gold{border-top-color:rgba(255,197,61,0.7);}
+
+  /* ---- topbar ---- */
+  .topbar{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:16px 6vw;
+    border-bottom:2px dashed var(--line);
+  }
+  .brand{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-family:'Space Grotesk', sans-serif;
+    font-weight:700;
+    font-size:1rem;
+  }
+  .brand-mark{
+    width:30px;height:30px;border-radius:8px;
+    background:var(--ink);
+    display:flex;align-items:center;justify-content:center;
+    color:var(--gold);font-family:'IBM Plex Mono';font-size:0.85rem;font-weight:600;
+  }
+  .topbar .loc{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.72rem;
+    color:var(--slate);
+    letter-spacing:0.06em;
+  }
+
+  /* ---- hero ---- */
+  .hero{
+    padding:min(9vw,84px) 6vw 56px;
+    display:grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap:48px;
+    align-items:center;
+  }
+  .hero h1{
+    font-size:clamp(2.1rem, 4.4vw, 3.6rem);
+    font-weight:700;
+    line-height:1.06;
+    margin-top:14px;
+  }
+  .hero h1 .hl{
+    color:var(--signal);
+    text-decoration: underline;
+    text-decoration-style: wavy;
+    text-decoration-color: var(--gold);
+    text-decoration-thickness: 3px;
+    text-underline-offset: 6px;
+  }
+  .hero p.sub{
+    margin-top:20px;
+    font-size:1.08rem;
+    color:var(--ink-soft);
+    max-width:46ch;
+  }
+  .hero-visual{
+    background:linear-gradient(180deg, #EAF1FB 0%, #F7FAFD 100%);
+    border-radius:20px;
+    border:1px solid var(--line);
+    padding:14px;
+  }
+  .hero-visual svg{width:100%;height:auto;display:block;border-radius:12px;}
+
+  /* ---- CTA button ---- */
+  .cta-btn{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    background:var(--signal);
+    color:#fff;
+    font-family:'Space Grotesk', sans-serif;
+    font-weight:700;
+    font-size:1rem;
+    padding:18px 26px;
+    border-radius:12px;
+    border:none;
+    cursor:pointer;
+    box-shadow:0 10px 24px rgba(255,90,54,0.32);
+    text-decoration:none;
+    transition:transform .15s ease, box-shadow .15s ease, background .15s ease;
+  }
+  .cta-btn:hover{
+    background:var(--signal-dark);
+    transform:translateY(-2px);
+    box-shadow:0 14px 30px rgba(222,68,35,0.38);
+  }
+  .cta-btn:focus-visible{
+    outline:3px solid var(--ink);
+    outline-offset:3px;
+  }
+  .cta-btn .arrow{font-size:1.1rem;transition:transform .15s ease;}
+  .cta-btn:hover .arrow{transform:translateX(3px);}
+  .cta-row{margin-top:30px;display:flex;flex-wrap:wrap;align-items:center;gap:16px;}
+  .cta-note{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.75rem;
+    color:var(--slate);
+  }
+
+  /* ---- section shell ---- */
+  section{padding:56px 6vw;}
+  .section-head{max-width:60ch;margin-bottom:36px;}
+  .section-head h2{
+    font-size:clamp(1.5rem, 2.6vw, 2.1rem);
+    font-weight:700;
+    margin-top:10px;
+  }
+
+  /* ---- mission ---- */
+  .mission{
+    background:var(--ink);
+    color:#F4F7FA;
+    border-radius:22px;
+    margin:0 6vw;
+    padding:52px 6vw;
+  }
+  .mission .eyebrow{color:var(--gold);}
+  .mission blockquote{
+    margin:16px 0 0;
+    font-family:'Space Grotesk', sans-serif;
+    font-weight:600;
+    font-size:clamp(1.25rem, 2.4vw, 1.7rem);
+    line-height:1.42;
+    max-width:56ch;
+  }
+  .mission p.attribution{
+    margin-top:22px;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.78rem;
+    color:#A9BBCF;
+  }
+
+  /* ---- facts / stat grid ---- */
+  .stat-grid{
+    display:grid;
+    grid-template-columns:repeat(4, 1fr);
+    gap:18px;
+  }
+  .stat-card{
+    background:var(--fog);
+    border-radius:var(--radius);
+    padding:24px 20px;
+    border:1px solid var(--line);
+  }
+  .stat-card .num{
+    font-family:'Space Grotesk', sans-serif;
+    font-weight:700;
+    font-size:2.4rem;
+    color:var(--signal-dark);
+    line-height:1;
+  }
+  .stat-card .label{
+    margin-top:10px;
+    font-weight:600;
+    font-size:0.95rem;
+  }
+  .stat-card .src{
+    margin-top:12px;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.68rem;
+    color:var(--slate);
+    letter-spacing:0.01em;
+  }
+  .context-para{
+    margin-top:30px;
+    max-width:74ch;
+    color:var(--ink-soft);
+    font-size:1rem;
+    padding-top:22px;
+    border-top:2px dashed var(--line);
+  }
+
+  /* ---- demands ---- */
+  .demands{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:18px;
+  }
+  .demand{
+    padding:26px 22px;
+    border-radius:var(--radius);
+    border:1px solid var(--line);
+    background:var(--paper);
+  }
+  .demand .tag{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.7rem;
+    color:var(--signal-dark);
+    font-weight:600;
+    letter-spacing:0.08em;
+  }
+  .demand h3{
+    font-size:1.15rem;
+    margin-top:10px;
+    font-weight:700;
+  }
+  .demand p{
+    margin-top:10px;
+    color:var(--ink-soft);
+    font-size:0.95rem;
+  }
+
+  /* ---- final cta banner ---- */
+  .final-cta{
+    background:linear-gradient(135deg, var(--ink) 0%, #163254 100%);
+    color:#fff;
+    border-radius:24px;
+    margin:0 6vw 64px;
+    padding:56px 6vw;
+    text-align:center;
+  }
+  .final-cta h2{
+    font-size:clamp(1.6rem, 3.4vw, 2.4rem);
+    font-weight:700;
+    max-width:26ch;
+    margin:0 auto;
+  }
+  .final-cta p{
+    color:#C9D6E5;
+    margin:14px auto 0;
+    max-width:48ch;
+  }
+  .final-cta .cta-row{justify-content:center;}
+
+  /* ---- signature line decorative ---- */
+  .sig-strip{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    margin-top:26px;
+    justify-content:center;
+    flex-wrap:wrap;
+  }
+  .sig-strip span{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.72rem;
+    color:#9FB2C7;
+  }
+
+  /* ---- footer ---- */
+  footer{
+    padding:32px 6vw 40px;
+    border-top:2px dashed var(--line);
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.72rem;
+    color:var(--slate);
+  }
+  footer .sources{margin-top:10px;line-height:1.8;}
+
+  @media (max-width:880px){
+    .hero{grid-template-columns:1fr;}
+    .hero-visual{order:-1;}
+    .stat-grid{grid-template-columns:repeat(2,1fr);}
+    .demands{grid-template-columns:1fr;}
+  }
+  @media (max-width:520px){
+    .stat-grid{grid-template-columns:1fr;}
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    *{transition:none !important;}
+  }
+</style>
+</head>
+<body>
+
+  <div class="topbar">
+    <div class="brand">
+      <div class="brand-mark">SG</div>
+      SAFE GROUND BC
+    </div>
+    <div class="loc">SURREY &amp; METRO VANCOUVER · STUDENT-LED</div>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero" style="padding-bottom:20px;">
+    <div>
+      <div class="eyebrow">A CAMPAIGN FOR INTERNATIONAL STUDENTS IN BC</div>
+      <h1>You came here to learn.<br>You shouldn't have to <span class="hl">fight to be safe.</span></h1>
+      <p class="sub">Across Surrey and Metro Vancouver, international students are living in overcrowded basements, working under rules that change without warning, and losing campus supports the moment enrolment dips. That's not a housing story or an immigration story — it's a protection gap, and it's fixable.</p>
+      <div class="cta-row">
+        <a href="#sign" class="cta-btn">Sign the Petition <span class="arrow">→</span></a>
+        <span class="cta-note">TAKES 30 SECONDS · NO ACCOUNT NEEDED</span>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <svg viewBox="0 0 520 460" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Illustration of a city skyline with a housing warning icon and a graduation cap">
+        <defs>
+          <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#DCEAFB"/>
+            <stop offset="100%" stop-color="#F7FAFD"/>
+          </linearGradient>
+        </defs>
+        <rect width="520" height="460" rx="12" fill="url(#sky)"/>
+        <!-- mountains -->
+        <polygon points="0,300 90,190 160,270 230,170 320,300" fill="#B9CEE6"/>
+        <polygon points="180,300 260,220 340,300" fill="#A6BEDA"/>
+        <!-- skytrain line -->
+        <line x1="0" y1="320" x2="520" y2="320" stroke="#8FA6C2" stroke-width="3" stroke-dasharray="2 10"/>
+        <!-- city blocks -->
+        <g fill="#1B3A5C">
+          <rect x="30" y="250" width="34" height="120" rx="3"/>
+          <rect x="76" y="220" width="30" height="150" rx="3"/>
+          <rect x="118" y="270" width="26" height="100" rx="3"/>
+          <rect x="380" y="240" width="30" height="130" rx="3"/>
+          <rect x="420" y="200" width="34" height="170" rx="3"/>
+          <rect x="464" y="260" width="26" height="110" rx="3"/>
+        </g>
+        <g fill="#F1F5F9" opacity="0.85">
+          <rect x="36" y="260" width="6" height="6"/><rect x="48" y="260" width="6" height="6"/>
+          <rect x="36" y="280" width="6" height="6"/><rect x="48" y="280" width="6" height="6"/>
+          <rect x="426" y="215" width="6" height="6"/><rect x="440" y="215" width="6" height="6"/>
+          <rect x="426" y="235" width="6" height="6"/><rect x="440" y="235" width="6" height="6"/>
+        </g>
+        <!-- ground -->
+        <rect x="0" y="368" width="520" height="92" fill="#EEF2F6"/>
+        <!-- house with warning -->
+        <g transform="translate(150,340)">
+          <rect x="0" y="30" width="110" height="70" rx="6" fill="#FFFFFF" stroke="#0E2238" stroke-width="3"/>
+          <polygon points="-8,32 55,-8 118,32" fill="#0E2238"/>
+          <rect x="20" y="55" width="24" height="24" fill="#EEF2F6" stroke="#0E2238" stroke-width="2.5"/>
+          <rect x="66" y="55" width="24" height="24" fill="#EEF2F6" stroke="#0E2238" stroke-width="2.5"/>
+          <circle cx="98" cy="18" r="20" fill="#FF5A36"/>
+          <text x="98" y="25" font-family="IBM Plex Mono, monospace" font-size="20" font-weight="700" fill="#fff" text-anchor="middle">!</text>
+        </g>
+        <!-- grad cap -->
+        <g transform="translate(300,352)">
+          <polygon points="40,0 80,16 40,32 0,16" fill="#FFC53D" stroke="#0E2238" stroke-width="2.5"/>
+          <rect x="30" y="16" width="20" height="26" fill="#0E2238"/>
+          <line x1="80" y1="16" x2="80" y2="42" stroke="#0E2238" stroke-width="2.5"/>
+          <circle cx="80" cy="46" r="3.5" fill="#0E2238"/>
+        </g>
+        <!-- dashed sign line under scene -->
+        <line x1="30" y1="430" x2="490" y2="430" stroke="#B9CEE6" stroke-width="2" stroke-dasharray="6 8"/>
+        <text x="30" y="452" font-family="IBM Plex Mono, monospace" font-size="12" fill="#54677D">Housing · Work rules · Campus support</text>
+      </svg>
+    </div>
+  </section>
+
+  <hr class="signline">
+
+  <!-- MISSION -->
+  <section>
+    <div class="mission">
+      <div class="eyebrow">OUR MISSION</div>
+      <blockquote>We organize so that no international student in British Columbia has to choose between paying rent, staying enrolled, and reporting the conditions they live under. Protection shouldn't depend on your visa status.</blockquote>
+      <p class="attribution">— Safe Ground BC, a student- and alumni-led coalition based in Surrey &amp; Metro Vancouver</p>
+    </div>
+  </section>
+
+  <!-- FACTS -->
+  <section>
+    <div class="section-head">
+      <div class="eyebrow">WHY THIS MATTERS</div>
+      <h2>The numbers behind the crisis</h2>
+    </div>
+    <div class="stat-grid">
+      <div class="stat-card">
+        <div class="num">61%</div>
+        <div class="label">of international students in Surrey live in unsuitable, overcrowded housing — the second-highest rate of any municipality in Canada.</div>
+        <div class="src">SOURCE: STATISTICS CANADA / IRCC, 2024</div>
+      </div>
+      <div class="stat-card">
+        <div class="num">3.6×</div>
+        <div class="label">higher: Surrey's unsuitable-housing rate (61%) compared with nearby Metro Vancouver A (17%), where UBC is located.</div>
+        <div class="src">SOURCE: STATISTICS CANADA, 2024</div>
+      </div>
+      <div class="stat-card">
+        <div class="num">4</div>
+        <div class="label">times the federal off-campus work-hour limit changed between 2022 and late 2024 — leaving students unable to plan budgets or hold steady jobs.</div>
+        <div class="src">SOURCE: IRCC / CBC NEWS, 2024</div>
+      </div>
+      <div class="stat-card">
+        <div class="num">52%</div>
+        <div class="label">of surveyed students at UBC reported financial hardship tied directly to housing costs in 2025.</div>
+        <div class="src">SOURCE: AMS ACADEMIC EXPERIENCE SURVEY, 2025</div>
+      </div>
+    </div>
+    <p class="context-para">At the same time, federal proposals to cut study-permit numbers by more than half within three years are being used to justify shrinking the very campus supports — advising, housing help, mental health services — that international students rely on most. The pressure is landing on the students who have the least power to push back.</p>
+  </section>
+
+  <hr class="signline gold">
+
+  <!-- DEMANDS -->
+  <section>
+    <div class="section-head">
+      <div class="eyebrow">WHAT WE'RE DEMANDING</div>
+      <h2>Three protections the petition calls for</h2>
+    </div>
+    <div class="demands">
+      <div class="demand">
+        <div class="tag">01 · HOUSING</div>
+        <h3>Enforced safety &amp; occupancy standards</h3>
+        <p>Real inspection and enforcement against landlords who overcrowd and exploit student tenants, with a reporting channel that doesn't put a student's status at risk.</p>
+      </div>
+      <div class="demand">
+        <div class="tag">02 · WORK RULES</div>
+        <h3>Stable, predictable work-hour policy</h3>
+        <p>An end to abrupt, unannounced changes to off-campus work limits — students need enough notice to plan rent, tuition, and course loads around the rules.</p>
+      </div>
+      <div class="demand">
+        <div class="tag">03 · CAMPUS SUPPORT</div>
+        <h3>Protected funding for student services</h3>
+        <p>Guaranteed baseline funding for advising, housing help, and mental health services for international students, independent of year-to-year enrolment swings.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section id="sign" style="padding-top:12px;">
+    <div class="final-cta">
+      <div class="eyebrow" style="color:var(--gold);">JOIN THE CAMPAIGN</div>
+      <h2>Sign the Petition: Demand Stronger Protections for International Students in BC</h2>
+      <p>Every signature goes directly to BC MLAs and the Ministry of Post-Secondary Education. Takes less than a minute — and your name stays with the cause, not a landlord or employer.</p>
+      <div class="cta-row">
+        <a href="#" class="cta-btn">Add My Signature <span class="arrow">→</span></a>
+      </div>
+      <div class="sig-strip">
+        <span>· · · · · · · · · · · · · · · · · · · · · · · · · · · · · ·</span>
+      </div>
+      <div class="sig-strip">
+        <span>SIGN AS A STUDENT</span>
+        <span>·</span>
+        <span>SIGN AS AN ALLY</span>
+        <span>·</span>
+        <span>SIGN AS AN ORGANIZATION</span>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div>SAFE GROUND BC — A STUDENT- &amp; ALUMNI-LED CAMPAIGN, SURREY &amp; METRO VANCOUVER</div>
+    <div class="sources">
+      SOURCES: Statistics Canada &amp; IRCC, "Housing international students: Housing suitability across municipalities" (2024) · CBC News, "International students more likely to live in unsuitable housing" (2024) · IRCC / CIC News, off-campus work-hour policy changes (2024) · AMS Academic Experience Survey, UBC (2025) · The Conversation, study-permit reduction proposals (2025–26)
+    </div>
+  </footer>
+
+</body>
+</html>
